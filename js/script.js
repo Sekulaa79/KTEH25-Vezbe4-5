@@ -18,7 +18,7 @@ if(temperatura>25){
     console.log("napolju je hladno");
 }
 
-const voce = ['jabuka','banana','kruska'];
+const voce = ['jabuka','banana','kruska','kivi'];
 console.log(voce);
 for(let i=0;i<voce.length;i++){
     console.log("volim da jedem",voce[i]);
@@ -32,3 +32,41 @@ for(const v of voce){
 for(const vo in voce){
     console.log(vo);
 }
+
+//funkcije
+function prognoza(temp){
+    if(temp>25){
+        console.log("napolju je toplo");
+    }else if(temp>15){
+        console.log("napolju je prijatno");
+    }else{
+        console.log("napolju je hladno");
+    }
+}
+
+prognoza(temperatura);
+
+function saberi(a,b){
+    return a+b;
+}
+
+const mnozenje = function (a,b){
+    return a*b;
+}
+
+console.log(voce.map(v => v.length));
+console.log(voce.map(function(v){
+    return v.length;
+}));
+
+const oduzmi = (b1,b2) => {
+    return b1-b2;
+}
+
+const oduzmiS = function(b1,b2){
+    return b1-b2;
+}
+
+(function(name){
+    console.log("Pozdrav iz IIFE od ", name)
+}(ime));
