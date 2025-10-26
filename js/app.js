@@ -52,7 +52,7 @@ forma.addEventListener('submit', function(event){
     const imeVrednost = imeInput.value.trim();
     const emailVrednost = emailInput.value.trim();
 
-    console.log("Ime>", imeVrednost,emailVrednost);
+    console.log("Novi korisnik>", imeVrednost,emailVrednost);
     
     dodajKorisnika(imeVrednost,emailVrednost);
 
@@ -60,6 +60,25 @@ forma.addEventListener('submit', function(event){
     //ime.value = "";
     //email.value= "";
     forma.reset();
+
+}
+)
+
+
+tableBody.addEventListener('click', function(event){
+    
+    if(event.target.classList.contains('delete-btn')){
+        console.log("Brisanje se desava");
+        odg = confirm("Da li zelis da obrises");
+        if(odg == true){
+            const redzabrisanje = event.target.closest('tr');
+        redzabrisanje.remove();
+        alert("red obrisan");
+        }else{
+            alert("red nije obrisan");
+        }
+       
+    }
 
 }
 )
