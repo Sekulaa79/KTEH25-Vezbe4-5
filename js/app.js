@@ -24,28 +24,42 @@ sviInputiSelektor.forEach(element => {
 
 naslov.textContent = 'Lista aktivnih korisnika';
 naslov.style.color = "blue";
+
 const imeInput = document.querySelector("#name-input");
 imeInput.setAttribute("placeholder", "Unesti ime i prezime");
 
 const forma = document.querySelector("#user-form");
 const tableBody = document.querySelector("#user-table tbody");
 
+const emailInput = document.querySelector("#email-input");
+
+function dodajKorisnika(ime, email){
+    //1 kreira novi tr u tbody
+    const red = document.createElement('tr');
+    red.innerHTML= `
+    <td>${ime}</td>
+    <td>${email}</td>
+    <td><button class="delete-btn">Obrisi</button></td>
+    `
+    tableBody.appendChild(red);
+    
+}
+
 forma.addEventListener('submit', function(event){
     event.preventDefault();
     console.log("Forma je poslata");
 
-    const ime = document.querySelector("#name-input");
-    const imeVrednost = ime.value;
+    const imeVrednost = imeInput.value.trim();
+    const emailVrednost = emailInput.value.trim();
 
-    const email = document.querySelector("#email-input");
-    const emailVrednost = email.value;
-
-    console.log("Ime>", imeVrednost);
-    console.log("Email>",emailVrednost);
-
-    ime.value = "";
-    email.value= "";
+    console.log("Ime>", imeVrednost,emailVrednost);
     
+    dodajKorisnika(imeVrednost,emailVrednost);
+
+
+    //ime.value = "";
+    //email.value= "";
+    forma.reset();
 
 }
 )
