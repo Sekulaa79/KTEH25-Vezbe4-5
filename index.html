@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Osnove</title>
-    <script>
-        /*ime = "Tamara";
-        console.log(ime);*/
-    </script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Pozdrav za JS ekipu</h1>
-    <script>
-       /* a=3;
-        b=6;
-        console.log(a+b);*/
-    </script>
+     <div class="container">
+        <h1 id="main-title">Lista Korisnika</h1>
+
+        <form id="user-form">
+            <input type="text" id="name-input" placeholder="Unesite ime" required>
+            <input type="email" id="email-input" placeholder="Unesite email" required>
+            <button type="submit">Dodaj Korisnika</button>
+            <button id="slanje-poruke">Posalji poruku</button>
+        </form>
+
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Email</th>
+                    <th>Akcija</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Redovi tabele će se dodavati ovde -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/app.js"> </script>
 </body>
-<script src="js/script.js"> </script>
 </html>
